@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- package com.nacos.example.gracefulshutdown.demos.nacosdiscoveryconsumer;
+package com.nacos.example.gracefulshutdown.demos.nacosdiscoveryconsumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +29,12 @@ public class OpenFeignController {
 
     @GetMapping("/feign/echo/{message}")
     public String feignEcho(@PathVariable String message) {
+        // sleep 30s
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return echoService.echo(message);
     }
 }
