@@ -84,8 +84,12 @@ public class DiscoveryDeregisterController {
 ```
 
 2. shell脚本实现
-参考： https://blog.csdn.net/zyndev/article/details/131435843
-   https://github.com/alibaba/spring-cloud-alibaba/issues/3665
+参考：
+
+https://blog.csdn.net/zyndev/article/details/131435843
+   
+https://github.com/alibaba/spring-cloud-alibaba/issues/3665
+
 ```shell
 function stop()  
 {  
@@ -105,5 +109,6 @@ function stop()
     fi
 }
 ```
+
 当我们想停止一个服务时，执行上述shell脚本，就可以实现优雅停机了。
 
